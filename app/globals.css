@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+body {
+  background: #000000;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hide scrollbar for horizontal gallery */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Prevent scrollbar from affecting layout */
+.scrollbar-hide {
+  overflow: -moz-scrollbars-none;
+}
+
+/* Custom animations */
+@keyframes shimmer {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translate(-2px, -2px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(-3px, -3px);
+  }
+}
+
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Chrome liquid metal effect */
+@keyframes chrome-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes metallic-shimmer {
+  0%,
+  100% {
+    opacity: 0.3;
+    filter: blur(8px) brightness(1.2);
+  }
+  50% {
+    opacity: 0.6;
+    filter: blur(6px) brightness(1.5);
+  }
+}
+
+@keyframes liquid-shine {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  50%,
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 3D flip card styles */
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
