@@ -99,6 +99,16 @@ export default function Gallery() {
     setIsModalOpen(false);
   };
 
+  const shuffledPhotos = useMemo(() => {
+  // Create a copy of the array to avoid mutating the original
+  const photosCopy = [...photos];
+  for (let i = photosCopy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [photosCopy[i], photosCopy[j]] = [photosCopy[j], photosCopy[i]];
+  }
+  return photosCopy;
+}, [photos]);
+
   return (
     <div className="min-h-screen bg-black">
       <Header />
@@ -125,7 +135,7 @@ export default function Gallery() {
 
           {/* Full Grid Gallery */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {photos.map((photo, index) => (
+            {shuffledPhotos.map((photo, index) => (
               <div
                 key={index}
                 ref={(el) => {
@@ -194,3 +204,4 @@ export default function Gallery() {
     </div>
   );
 }
+
