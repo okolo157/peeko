@@ -97,7 +97,7 @@ export default function PhotoGrid() {
     <>
       {/* Mobile (Vertical Scroll) */}
       <div className="block lg:hidden px-4 md:px-6 space-y-6 pb-8">
-        {photos.map((photo, index) => (
+        {photos.slice(0, 5).map((photo, index) => (
           <div
             key={index}
             ref={(el) => {
@@ -137,7 +137,7 @@ export default function PhotoGrid() {
       <div className="hidden lg:block relative -mx-6">
         <div className="overflow-x-auto overflow-y-hidden scrollbar-hide pb-4">
           <div className="flex gap-6 px-6">
-            {photos.map((photo, index) => (
+            {photos.slice(0, 5).map((photo, index) => (
               <div
                 key={index}
                 ref={(el) => {
@@ -185,3 +185,4 @@ export default function PhotoGrid() {
     </>
   );
 }
+
